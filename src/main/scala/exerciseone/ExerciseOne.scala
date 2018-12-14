@@ -22,7 +22,7 @@ object ExerciseOne {
 
     val planningApplicationsWeekly = spark.read.json("src/main/resources/planning-applications-weekly-list.json")
 
-    planningApplicationsWeekly.schema
+    planningApplicationsWeekly.schema.treeString
 
   }
 
