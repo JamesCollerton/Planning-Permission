@@ -1,0 +1,5 @@
+package exercisesix
+
+object ExerciseSix {
+
+}
