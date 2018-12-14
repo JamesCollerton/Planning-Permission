@@ -3,11 +3,11 @@
 <ivy-report version="1.0">
 	<info
 		organisation="default"
-		module="planning_permission_2.12"
+		module="planning_permission$sources"
 		revision="0.1"
-		conf="optional"
+		conf="scoveragePlugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, scoveragePlugin"
-		date="20181214102728"/>
+		date="20181214102738"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

@@ -4,7 +4,7 @@
 		module="planning_permission_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20181214073647"
+		publication="20181214102728"
 	>
 		<description>
 		Planning_Permission
@@ -22,6 +22,7 @@
 		<conf name="plugin" visibility="private" description=""/>
 		<conf name="pom" visibility="public" description=""/>
 		<conf name="scala-tool" visibility="private" description=""/>
+		<conf name="scoveragePlugin" visibility="private" description=""/>
 	</configurations>
 	<publications>
 		<artifact name="planning_permission_2.12" type="pom" ext="pom" conf="pom"/>
@@ -32,5 +33,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.8" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="junit" name="junit" rev="4.5" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

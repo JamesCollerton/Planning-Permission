@@ -5,7 +5,7 @@
 		organisation="default"
 		module="planning_permission_2.12"
 		revision="0.1"
-		conf="optional"
+		conf="scoveragePlugin"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, scoveragePlugin"
 		date="20181214102728"/>
 	<dependencies>
