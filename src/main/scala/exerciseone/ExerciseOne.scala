@@ -5,6 +5,8 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
   * Useful tutorial: https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
   * When we get null in Chmod https://stackoverflow.com/questions/40764807/null-entry-in-command-string-exception-in-saveastextfile-on-pyspark
+  *
+  * Discover the schema of the input dataset and output it to a file.
   */
 object ExerciseOne {
 
