@@ -4,7 +4,7 @@
 		module="planning_permission_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20181214102728"
+		publication="20181214110318"
 	>
 		<description>
 		Planning_Permission
@@ -35,5 +35,6 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="junit" name="junit" rev="4.5" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core" rev="2.2.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
