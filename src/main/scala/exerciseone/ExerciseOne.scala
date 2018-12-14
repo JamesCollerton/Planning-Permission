@@ -1,10 +1,13 @@
 package exerciseone
 
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * Useful tutorial: https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
+  * Useful tutorial: https://spark.apache.org/docs/latest/sql-getting-started.html
   * When we get null in Chmod https://stackoverflow.com/questions/40764807/null-entry-in-command-string-exception-in-saveastextfile-on-pyspark
+  *
   *
   * Discover the schema of the input dataset and output it to a file.
   */
@@ -12,22 +15,11 @@ object ExerciseOne {
 
   def main(args: Array[String]): Unit= {
 
-    //Create a SparkContext to initialize Spark
-    val conf = new SparkConf()
-    conf.setMaster("local")
-    conf.setAppName("Word Count")
-    val sc = new SparkContext(conf)
+    val spark = SparkSession.builder.appName("Discover Schema").getOrCreate()
 
-    // Load the text into a Spark RDD, which is a distributed representation of each line of text
-    val textFile = sc.textFile("src/main/resources/shakespeare.txt")
+    spark.read.json("src/main/resources/planning-applications-weekly-list.json")
 
-    //word count
-    val counts = textFile.flatMap(line => line.split(" "))
-      .map(word => (word, 1))
-      .reduceByKey(_ + _)
 
-    counts.foreach(println)
-    System.out.println("Total words: " + counts.count());
   }
 
 }
