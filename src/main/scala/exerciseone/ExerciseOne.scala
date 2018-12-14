@@ -9,6 +9,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * Useful tutorial: https://spark.apache.org/docs/latest/quick-start.html#self-contained-applications
   * When we get null in Chmod https://stackoverflow.com/questions/35652665/java-io-ioexception-could-not-locate-executable-null-bin-winutils-exe-in-the-ha
   *
+  * Logging: https://stackoverflow.com/questions/978252/logging-in-scala
   *
   * Discover the schema of the input dataset and output it to a file.
   */
