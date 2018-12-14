@@ -1,5 +1,6 @@
 package exerciseone
 
+import com.typesafe.scalalogging.LazyLogging
 import org.apache.spark.sql.SparkSession
 
 /**
@@ -13,17 +14,21 @@ import org.apache.spark.sql.SparkSession
   *
   * Discover the schema of the input dataset and output it to a file.
   */
-object ExerciseOne {
+object ExerciseOne extends LazyLogging {
 
   def main(args: Array[String]): Unit= {
+
+    logger.info("Entered exercise one.")
 
     System.setProperty("hadoop.home.dir", "C:\\Program Files\\Hadoop")
 
     val spark = SparkSession.builder.appName("Discover Schema").config("spark.master", "local").getOrCreate()
 
-    val planningApplicationsWeekly = spark.read.json("src/main/resources/planning-applications-weekly-list.json")
+    val planningApplicationsWeekly = spark.read.json("src/main/resources/data/planning-applications-weekly-list.json")
 
     planningApplicationsWeekly.schema.treeString
+
+    logger.info("Exited exercise one.")
 
   }
 
