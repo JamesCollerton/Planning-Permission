@@ -1,7 +1,6 @@
 package exerciseone
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * Useful tutorial: https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
@@ -10,6 +9,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * When we get null in Chmod https://stackoverflow.com/questions/35652665/java-io-ioexception-could-not-locate-executable-null-bin-winutils-exe-in-the-ha
   *
   * Logging: https://stackoverflow.com/questions/978252/logging-in-scala
+  * Logging: https://index.scala-lang.org/lightbend/scala-logging/scala-logging/3.9.0?target=_2.12
   *
   * Discover the schema of the input dataset and output it to a file.
   */

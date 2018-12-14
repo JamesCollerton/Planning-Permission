@@ -4,7 +4,7 @@
 		module="planning_permission-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20181214102708"
+		publication="20181214161551"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

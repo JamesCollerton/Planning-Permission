@@ -4,7 +4,7 @@
 		module="planning_permission_2.11"
 		revision="0.1"
 		status="integration"
-		publication="20181214145833"
+		publication="20181214161950"
 	>
 		<description>
 		Planning_Permission
@@ -37,5 +37,7 @@
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.1" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.3.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.4.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.scala-logging" name="scala-logging_2.11" rev="3.1.0" conf="compile->default(compile)"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.1.2" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

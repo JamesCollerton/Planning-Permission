@@ -9,7 +9,7 @@
 		extra-sbtVersion="1.0"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181214102708"/>
+		date="20181214161551"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="1.1.1" status="release" pubdate="20180208104419" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sbt/sbt" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
@@ -399,9 +399,9 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.modules" name="scala-xml_2.12">
-			<revision name="1.0.5" status="release" pubdate="20161028231007" resolver="public" artresolver="public" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="-1">
+			<revision name="1.0.5" status="release" pubdate="20161028231007" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="-1">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2518" time="158" location="C:\Users\james.collerton\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\ivy-1.0.5.xml" searched="true" original-local-location="C:\Users\james.collerton\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\ivy-1.0.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.5/scala-xml_2.12-1.0.5.pom"/>
+				<metadata-artifact status="no" details="" size="3175" time="0" location="C:\Users\james.collerton\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\ivy-1.0.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.5/scala-xml_2.12-1.0.5.pom"/>
 				<evicted-by rev="1.0.6"/>
 				<caller organisation="org.scala-sbt" name="main_2.12" conf="compile, runtime" rev="1.0.6" rev-constraint-default="1.0.6" rev-constraint-dynamic="1.0.6" callerrev="1.1.1"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="compile, runtime" rev="1.0.6" rev-constraint-default="1.0.6" rev-constraint-dynamic="1.0.6" callerrev="2.12.4"/>
