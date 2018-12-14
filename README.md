@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/JamesCollerton/Planning_Permission.svg?branch=master)](https://travis-ci.com/JamesCollerton/Planning_Permission)
+[![codecov](https://codecov.io/gh/JamesCollerton/Planning_Permission/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesCollerton/Planning_Permission)
 
 # Planning_Permission
 
