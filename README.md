@@ -7,7 +7,9 @@ Short Scala Spark project based around planning permissions in the North East of
 
 To think about:
 
+- What is Spark?
 - Builds
 - Tests
 - Logging
 - Error-handling
+- Potentially docker

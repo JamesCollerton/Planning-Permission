@@ -18,17 +18,29 @@ object ExerciseOne extends LazyLogging {
 
   def main(args: Array[String]): Unit= {
 
-    logger.info("Entered exercise one.")
+    // TODO: Check arguments
 
-    System.setProperty("hadoop.home.dir", "C:\\Program Files\\Hadoop")
+    logger.info(s"Entered ExerciseOne.main")
+
+    val schema = findSchema("src/main/resources/data/planning-applications-weekly-list.json")
+
+    logger.info(s"Exiting ExerciseOne.main")
+
+  }
+
+  def findSchema(resourceName: String): String = {
+
+    logger.info(s"Entered ExerciseOne.findSchema: $resourceName")
 
     val spark = SparkSession.builder.appName("Discover Schema").config("spark.master", "local").getOrCreate()
 
     val planningApplicationsWeekly = spark.read.json("src/main/resources/data/planning-applications-weekly-list.json")
 
-    planningApplicationsWeekly.schema.treeString
+    val schema = planningApplicationsWeekly.schema.treeString
 
-    logger.info("Exited exercise one.")
+    logger.info(s"Exiting ExerciseOne.findSchema: $schema")
+
+    schema
 
   }
 
