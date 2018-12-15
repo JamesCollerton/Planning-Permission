@@ -24,17 +24,6 @@ class ExerciseOneTest extends FunSuite {
     FileUtils.deleteQuietly(new File(testFileName))
   }
 
-  test("Given valid arguments, when derive arguments, returns correct filename") {
-    assert(ExerciseOne.deriveArgs(Array("filename")) == "filename")
-  }
-
-  test("Given invalid arguments, when derive arguments, throws exception") {
-    val exception = intercept[IllegalArgumentException] {
-      ExerciseOne.deriveArgs(Array())
-    }
-    assert(exception.getMessage == "No argument for file to write to presented.")
-  }
-
   test("Given valid basic schema, when find schema, then correct schema returned") {
     val expectedSchema = "root\n |-- age: long (nullable = true)\n |-- city: string (nullable = true)\n |-- name: string (nullable = true)\n"
     val actualSchema = ExerciseOne.findSchema("src/test/resources/data/exerciseone/valid-basic.json")
