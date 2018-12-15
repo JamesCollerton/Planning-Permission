@@ -66,7 +66,7 @@ object ExerciseOne extends LazyLogging {
 
     logger.info(s"Entered ExerciseOne.findSchema: $resourcePath")
 
-    val spark = SparkSessionProvider.buildSession("Discover Schema")
+    val spark = SparkSessionProvider.buildSession()
 
     val dataFrame = spark.read.json(resourcePath)
 
