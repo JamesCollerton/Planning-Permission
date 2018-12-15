@@ -2,10 +2,9 @@ name := "Planning_Permission"
 
 version := "0.1"
 
-//scalaVersion := "2.12.8"
 scalaVersion := "2.11.12"
 
-resolvers += Resolver.url("scoverage-bintray", url("https://dl.bintray.com/sksamuel/sbt-plugins/"))(Resolver.ivyStylePatterns)
+//resolvers += Resolver.url("scoverage-bintray", url("https://dl.bintray.com/sksamuel/sbt-plugins/"))(Resolver.ivyStylePatterns)
 
 libraryDependencies ++= Seq(
   "junit"                       %   "junit"           % "4.5",
