@@ -1,7 +1,7 @@
 package exerciseone
 
 import com.typesafe.scalalogging.LazyLogging
-import utilities.{ArgumentDeriver, FileWriter, SparkSessionDataframeExecutor, SparkSessionProvider}
+import utilities.{ArgumentDeriver, SolutionFileWriter, SparkSessionDataframeExecutor}
 
 /**
   * Discover the schema of the input dataset and output it to a file.
@@ -20,7 +20,7 @@ object ExerciseOne extends LazyLogging {
 
     val fileToWriteTo = ArgumentDeriver.deriveFilenameArgument(args)
     val schema = findSchema("src/main/resources/data/planning-applications-weekly-list.json")
-    FileWriter.write(schema, fileToWriteTo)
+    SolutionFileWriter.write(schema, fileToWriteTo)
 
     logger.info(s"Exiting ExerciseOne.main: $args")
 

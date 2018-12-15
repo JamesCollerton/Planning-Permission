@@ -1,7 +1,7 @@
 package exercisetwo
 
 import com.typesafe.scalalogging.LazyLogging
-import utilities.{ArgumentDeriver, FileWriter, SparkSessionDataframeExecutor, SparkSessionProvider}
+import utilities.{ArgumentDeriver, SolutionFileWriter, SparkSessionDataframeExecutor}
 
 /**
   * What is the total number of planning application records in the dataset? Feel free to output this to a file or
@@ -21,16 +21,16 @@ object ExerciseTwo extends LazyLogging {
 
     val fileToWriteTo = ArgumentDeriver.deriveFilenameArgument(args)
     val recordCount = countRecords("src/main/resources/data/planning-applications-weekly-list.json")
-    FileWriter.write(recordCount.toString, fileToWriteTo)
+    SolutionFileWriter.write(recordCount.toString, fileToWriteTo)
 
     logger.info(s"Exiting ExerciseTwo.main: $args")
 
   }
 
   /**
-    * Derives the schema from the supplied resource name.
+    * Counts the number of records from the supplied resource name.
     *
-    * @param resourcePath path of the resource we would like to derive the schema for
+    * @param resourcePath path of the resource we would like to count records for
     * @return string representing the resource schema
     */
   def countRecords(resourcePath: String): Long = {

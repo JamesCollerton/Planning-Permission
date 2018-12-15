@@ -2,6 +2,9 @@ package utilities
 
 import com.typesafe.scalalogging.LazyLogging
 
+/**
+  * Handles all arguments supplied to the main functions of the various exercises
+  */
 object ArgumentDeriver extends LazyLogging {
 
   /**
