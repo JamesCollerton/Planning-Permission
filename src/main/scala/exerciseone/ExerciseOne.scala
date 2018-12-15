@@ -2,6 +2,7 @@ package exerciseone
 
 import com.typesafe.scalalogging.LazyLogging
 import org.apache.spark.sql.SparkSession
+import utilities.FileWriter
 
 /**
   * Useful tutorial: https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
@@ -18,13 +19,29 @@ object ExerciseOne extends LazyLogging {
 
   def main(args: Array[String]): Unit= {
 
-    // TODO: Check arguments
+    logger.info(s"Entered ExerciseOne.main: $args")
 
-    logger.info(s"Entered ExerciseOne.main")
-
+    val fileToWriteTo = deriveArgs(args)
     val schema = findSchema("src/main/resources/data/planning-applications-weekly-list.json")
+    FileWriter.write(schema, fileToWriteTo)
 
-    logger.info(s"Exiting ExerciseOne.main")
+    logger.info(s"Exiting ExerciseOne.main: $args")
+
+  }
+
+  def deriveArgs(args: Array[String]): String = {
+
+    logger.info(s"Entered ExerciseOne.deriveArgs: $args")
+
+    if(args.length != 1) {
+      throw new IllegalArgumentException("No argument for file to write to presented.")
+    }
+
+    val fileToWriteTo = args(0)
+
+    logger.info(s"Exiting ExerciseOne.deriveArgs: $fileToWriteTo")
+
+    fileToWriteTo
 
   }
 
@@ -34,9 +51,9 @@ object ExerciseOne extends LazyLogging {
 
     val spark = SparkSession.builder.appName("Discover Schema").config("spark.master", "local").getOrCreate()
 
-    val planningApplicationsWeekly = spark.read.json("src/main/resources/data/planning-applications-weekly-list.json")
+    val dataFrame = spark.read.json(resourceName)
 
-    val schema = planningApplicationsWeekly.schema.treeString
+    val schema = dataFrame.schema.treeString
 
     logger.info(s"Exiting ExerciseOne.findSchema: $schema")
 
