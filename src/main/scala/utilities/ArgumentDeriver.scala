@@ -8,24 +8,25 @@ import com.typesafe.scalalogging.LazyLogging
 object ArgumentDeriver extends LazyLogging {
 
   /**
-    * Checks there is only one argument and returns it
+    * Checks there are two arguments for the resource and the filename, then returns them
     *
     * @param args the arguments to check
     * @return a single argument taken from the list
     */
-  def deriveFilenameArgument(args: Array[String]): String = {
+  def deriveResourceFilenameArgument(args: Array[String]): (String, String) = {
 
-    logger.info(s"Entered ArgumentDeriver.deriveArgs: $args")
+    logger.info(s"Entered ArgumentDeriver.deriveResourceFilenameArgument: $args")
 
-    if(args.length != 1) {
-      throw new IllegalArgumentException("No argument for file to write to presented.")
+    if(args.length != 2) {
+      throw new IllegalArgumentException("Arguments for resource path/ file incorrect.")
     }
 
-    val fileToWriteTo = args.head
+    val resourcePath = args.head
+    val fileToWriteTo = args.tail.head
 
-    logger.info(s"Exiting ArgumentDeriver.deriveArgs: $fileToWriteTo")
+    logger.info(s"Exiting ArgumentDeriver.deriveResourceFilenameArgument: $resourcePath, $fileToWriteTo")
 
-    fileToWriteTo
+    (resourcePath, fileToWriteTo)
 
   }
 

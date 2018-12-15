@@ -9,13 +9,15 @@ import scala.io.Source
 
 class SolutionFileWriterTest extends org.scalatest.FunSuite with BeforeAndAfter {
 
+  private val testFileName = "TestFile.txt"
+
   after {
-    FileUtils.deleteQuietly(new File("TestFile.txt"))
+    FileUtils.deleteQuietly(new File(testFileName))
   }
 
   test("Given file path does exist and data valid, when write file, then writes file correclty") {
-    SolutionFileWriter.write("Test Data", "TestFile.txt")
-    val testFileLines = Source.fromFile("TestFile.txt").getLines.toList
+    SolutionFileWriter.write("Test Data", testFileName)
+    val testFileLines = Source.fromFile(testFileName).getLines.toList
     assert(testFileLines.length == 1)
     assert(testFileLines.head == "Test Data")
   }
