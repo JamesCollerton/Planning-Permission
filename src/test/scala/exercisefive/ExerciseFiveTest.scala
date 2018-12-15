@@ -16,6 +16,8 @@ class ExerciseFiveTest extends FunSuite {
 
   }
 
-  test("Given invalid file, when count unique words, then throws exception")
+  test("Given invalid file, when count unique words, then throws exception") {
+
+  }
 
 }

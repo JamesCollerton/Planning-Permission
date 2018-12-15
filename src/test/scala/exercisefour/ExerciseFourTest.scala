@@ -12,6 +12,8 @@ class ExerciseFourTest extends FunSuite {
 
   }
 
-  test("Given invalid file, when find top 2 agents, then throws exception")
+  test("Given invalid file, when find top 2 agents, then throws exception") {
+
+  }
 
 }
