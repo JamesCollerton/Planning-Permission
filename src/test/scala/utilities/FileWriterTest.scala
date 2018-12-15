@@ -15,9 +15,9 @@ class FileWriterTest extends org.scalatest.FunSuite with BeforeAndAfter {
 
   test("Given file path does exist and data valid, when write file, then writes file correclty") {
     FileWriter.write("Test Data", "TestFile.txt")
-    val lines = Source.fromFile("TestFile.txt").getLines.toList
-    assert(lines.length == 1)
-    assert(lines.head == "Test Data")
+    val testFileLines = Source.fromFile("TestFile.txt").getLines.toList
+    assert(testFileLines.length == 1)
+    assert(testFileLines.head == "Test Data")
   }
 
 }

@@ -16,6 +16,12 @@ import utilities.{FileWriter, SparkSessionProvider}
   */
 object ExerciseOne extends LazyLogging {
 
+  /**
+    * Point of entry for the program. Expects a single parameter containing the filename to
+    * write the results to.
+    *
+    * @param args Single parameter containing the filename as a string
+    */
   def main(args: Array[String]): Unit= {
 
     logger.info(s"Entered ExerciseOne.main: $args")
@@ -28,6 +34,12 @@ object ExerciseOne extends LazyLogging {
 
   }
 
+  /**
+    * Checks there is only one argument and returns it
+    *
+    * @param args the arguments to check
+    * @return a single argument taken from the list
+    */
   def deriveArgs(args: Array[String]): String = {
 
     logger.info(s"Entered ExerciseOne.deriveArgs: $args")
@@ -44,13 +56,19 @@ object ExerciseOne extends LazyLogging {
 
   }
 
-  def findSchema(resourceName: String): String = {
+  /**
+    * Derives the schema from the supplied resource name.
+    *
+    * @param resourcePath path of the resource we would like to derive the schema for
+    * @return string representing the resource schema
+    */
+  def findSchema(resourcePath: String): String = {
 
-    logger.info(s"Entered ExerciseOne.findSchema: $resourceName")
+    logger.info(s"Entered ExerciseOne.findSchema: $resourcePath")
 
     val spark = SparkSessionProvider.buildSession("Discover Schema")
 
-    val dataFrame = spark.read.json(resourceName)
+    val dataFrame = spark.read.json(resourcePath)
 
     val schema = dataFrame.schema.treeString
 
