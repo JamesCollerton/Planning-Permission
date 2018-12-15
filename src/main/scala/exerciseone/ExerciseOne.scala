@@ -1,8 +1,7 @@
 package exerciseone
 
 import com.typesafe.scalalogging.LazyLogging
-import org.apache.spark.sql.SparkSession
-import utilities.FileWriter
+import utilities.{FileWriter, SparkSessionProvider}
 
 /**
   * Useful tutorial: https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
@@ -37,7 +36,7 @@ object ExerciseOne extends LazyLogging {
       throw new IllegalArgumentException("No argument for file to write to presented.")
     }
 
-    val fileToWriteTo = args(0)
+    val fileToWriteTo = args.head
 
     logger.info(s"Exiting ExerciseOne.deriveArgs: $fileToWriteTo")
 
@@ -49,7 +48,7 @@ object ExerciseOne extends LazyLogging {
 
     logger.info(s"Entered ExerciseOne.findSchema: $resourceName")
 
-    val spark = SparkSession.builder.appName("Discover Schema").config("spark.master", "local").getOrCreate()
+    val spark = SparkSessionProvider.buildSession("Discover Schema")
 
     val dataFrame = spark.read.json(resourceName)
 
