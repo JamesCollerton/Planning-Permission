@@ -8,9 +8,12 @@ import utilities.DoubleArgumentExerciseExecutor
   * Measure the average public consultation duration in days (i.e. the difference between PUBLICCONSULTATIONENDDATE and
   * PUBLICCONSULTATIONSTARTDATE fields). Feel free to output this to a file or standard output on the console.
   *
+  * DD/MM/YYYY
+  *
   * Improvements:
   *   - Check to make sure date
   *   - Assumes that column exists
+  *   - Check to make sure end date not before start date
   */
 object ExerciseSix extends LazyLogging {
 
@@ -22,18 +25,15 @@ object ExerciseSix extends LazyLogging {
     */
   def main(args: Array[String]): Unit= {
 
-    logger.info(s"Entered ExerciseSix.main: $args")
-
-    DoubleArgumentExerciseExecutor.execute(
-      args,
-      d => d.withColumn("CASETEXT", explode(split(col("CASETEXT"), " ")))
-        .groupBy("CASETEXT")
-        .count()
-        .collect()
-        .mkString(", ")
-    )
-
-    logger.info(s"Exiting ExerciseSix.main: $args")
+//    logger.info(s"Entered ExerciseSix.main: $args")
+//
+//    DoubleArgumentExerciseExecutor.execute(
+//      args,
+//      d => d.withColumn("")
+//        select("PUBLICCONSULTATIONSTARTDATE", "PUBLICCONSULTATIONENDDATE")
+//    )
+//
+//    logger.info(s"Exiting ExerciseSix.main: $args")
 
   }
 
