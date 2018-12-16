@@ -4,6 +4,6 @@ before_install: umask 0022
 scala:
   - 2.11.12
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION test
+#  - sbt ++$TRAVIS_SCALA_VERSION test
   - sbt clean coverage test coverageReport
   - bash <(curl -s https://codecov.io/bash)

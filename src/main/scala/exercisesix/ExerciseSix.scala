@@ -1,7 +1,7 @@
 package exercisesix
 
 import com.typesafe.scalalogging.LazyLogging
-import org.apache.spark.sql.functions.{col, explode, split}
+import org.apache.spark.sql.functions.unix_timestamp
 import utilities.DoubleArgumentExerciseExecutor
 
 /**
@@ -29,8 +29,8 @@ object ExerciseSix extends LazyLogging {
 //
 //    DoubleArgumentExerciseExecutor.execute(
 //      args,
-//      d => d.withColumn("")
-//        select("PUBLICCONSULTATIONSTARTDATE", "PUBLICCONSULTATIONENDDATE")
+//      d => d.withColumn("PUBLICCONSULTATIONSTARTDATE", unix_timestamp("PUBLICCONSULTATIONSTARTDATE", "dd-MMM-yy").cast("timestamp"))
+//            .withColumn("PUBLICCONSULTATIONSTARTDATE", to_timestamp("PUBLICCONSULTATIONSTARTDATE", "dd/MM/yyyy"))
 //    )
 //
 //    logger.info(s"Exiting ExerciseSix.main: $args")
