@@ -8,7 +8,9 @@ import org.apache.spark.sql.functions._
   * Who are the top N agents (AGENT field) submitting the most number of applications? Allow N to be configurable and
   * output the list to a file.
   *
-  * Blank agent fields will not be filtered, if two agents have same number of applications will be arbitrarily chosen.
+  * Improvements
+  *   - Blank agent fields not filtered
+  *   - Two agents have same number of applications will be arbitrarily chosen
   */
 object ExerciseFour extends LazyLogging {
 

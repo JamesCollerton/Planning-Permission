@@ -8,7 +8,10 @@ import org.apache.spark.sql.functions._
   * Count the occurrence of each word within the case text (CASETEXT field) across all planning application records.
   * Output each word and the corresponding count to a file.
   *
-  * Note, this could do things like remove punctuation but doesn't
+  * Improvements:
+  *   - Remove punctuation
+  *   - All lower case
+  *   - Assumes that column exists
   */
 object ExerciseFive extends LazyLogging {
 

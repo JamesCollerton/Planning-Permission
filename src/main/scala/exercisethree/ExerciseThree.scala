@@ -5,6 +5,9 @@ import utilities.DoubleArgumentExerciseExecutor
 
 /**
   * Identify the set of case officers (CASEOFFICER field) and output a unique list of these to a file.
+  *
+  * Improvements:
+  *   - Assumes that column exists
   */
 object ExerciseThree extends LazyLogging {
 
