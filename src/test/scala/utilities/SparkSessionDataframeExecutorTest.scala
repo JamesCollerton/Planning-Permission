@@ -1,6 +1,6 @@
 package utilities
 
-import org.apache.spark.sql.functions.{col, desc, explode, split}
+import org.apache.spark.sql.functions._
 import org.scalatest.FunSuite
 
 class SparkSessionDataframeExecutorTest extends FunSuite {
@@ -56,6 +56,23 @@ class SparkSessionDataframeExecutorTest extends FunSuite {
               .mkString(", ")
     )
     assert(caseTextCount == "[strawberry,1], [kiwi,1], [apple,1], [banana,1], [pineapple,1]")
+
+  }
+
+  test("Given valid input file with four days difference, when find consultation length, then return two days") {
+
+    val averageConsultationLength = SparkSessionDataframeExecutor.buildSessionExecuteFunction(
+      "src/test/resources/data/utilities/valid-file-four-days-difference.json",
+      d => d.withColumn("PUBLICCONSULTATIONDIFFERENCE",
+                datediff(to_date(col("PUBLICCONSULTATIONENDDATE"), "dd/MM/yyyy"), to_date(col("PUBLICCONSULTATIONSTARTDATE"), "dd/MM/yyyy"))
+              )
+              .agg(
+                avg(col("PUBLICCONSULTATIONDIFFERENCE")).as("AVGPUBLICCONSULTATIONDIFFERENCE")
+              )
+              .collect()
+              .mkString(", ")
+    )
+    assert(averageConsultationLength == "[4.0]")
 
   }
 

@@ -3,7 +3,7 @@ package utilities
 import java.io.File
 
 import org.apache.commons.io.FileUtils
-import org.apache.spark.sql.functions.desc
+import org.apache.spark.sql.functions._
 import org.scalatest.{BeforeAndAfter, FunSuite}
 
 import scala.io.Source
@@ -72,6 +72,29 @@ class DoubleArgumentExerciseExecutorTest extends FunSuite with BeforeAndAfter {
               .orderBy(desc("n"))
               .select("AGENT")
               .head(numberAgents)
+              .mkString(", ")
+    )
+    val testFileLines = Source.fromFile(testFileName).getLines.toList
+
+    assert(testFileLines.length == 1)
+    assert(testFileLines.head == expectedList)
+
+  }
+
+  test("Given valid dataset, when find consultation length, returns expected list") {
+
+    val resourcePath = "src/main/resources/data/planning-applications-weekly-list.json"
+    val expectedList = "[60.921188887782534]"
+
+    DoubleArgumentExerciseExecutor.execute(
+      Array(resourcePath, testFileName),
+      d => d.withColumn("PUBLICCONSULTATIONDIFFERENCE",
+                datediff(to_date(col("PUBLICCONSULTATIONENDDATE"), "dd/MM/yyyy"), to_date(col("PUBLICCONSULTATIONSTARTDATE"), "dd/MM/yyyy"))
+              )
+              .agg(
+                avg(col("PUBLICCONSULTATIONDIFFERENCE")).as("AVGPUBLICCONSULTATIONDIFFERENCE")
+              )
+              .collect()
               .mkString(", ")
     )
     val testFileLines = Source.fromFile(testFileName).getLines.toList
