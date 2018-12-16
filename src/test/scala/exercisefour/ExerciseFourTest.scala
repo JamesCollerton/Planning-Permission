@@ -57,10 +57,6 @@ class ExerciseFourTest extends FunSuite with BeforeAndAfter {
 
   }
 
-//  test("Given invalid file, when find top 2 agents, then throws exception") {
-//
-//  }
-
   /*
     Utilities
    */

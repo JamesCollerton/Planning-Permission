@@ -8,8 +8,6 @@ import utilities.DoubleArgumentExerciseExecutor
   * Measure the average public consultation duration in days (i.e. the difference between PUBLICCONSULTATIONENDDATE and
   * PUBLICCONSULTATIONSTARTDATE fields). Feel free to output this to a file or standard output on the console.
   *
-  * DD/MM/YYYY
-  *
   * Improvements:
   *   - Check to make sure date
   *   - Assumes that column exists

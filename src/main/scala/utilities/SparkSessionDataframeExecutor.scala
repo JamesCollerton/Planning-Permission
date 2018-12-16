@@ -4,8 +4,8 @@ import com.typesafe.scalalogging.LazyLogging
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 /**
-  * When we want to execute a single function against a resource we pass the function
-  * to this executor which will execute it against the session and the resource
+  * When we want to execute a single function against a DataFrame derived from a resource we pass the function and
+  * resource to this executor.
   */
 object SparkSessionDataframeExecutor extends LazyLogging {
 
@@ -15,8 +15,7 @@ object SparkSessionDataframeExecutor extends LazyLogging {
   private val spark = SparkSession.builder.appName("Spark Session").config("spark.master", "local").getOrCreate()
 
   /**
-    * Allows us to execute an arbitrary function f against a DataFrame of a resource using the
-    * current SparkSession
+    * Allows us to execute an arbitrary function f against a DataFrame of a resource using the current SparkSession
     *
     * @param resourcePath Path of the resource to execute against
     * @param f Function to execute

@@ -8,7 +8,8 @@ import com.typesafe.scalalogging.LazyLogging
 object ArgumentDeriver extends LazyLogging {
 
   /**
-    * Checks there are two arguments for the resource and the filename, then returns them
+    * Checks there are two arguments for the resource and the filename, then returns them. Will throw an
+    * IllegalArgumentException stopping the program if the arguments are incorrect.
     *
     * @param args The arguments to check
     * @return A tuple of arguments from the list representing the resource path and file to write to
@@ -31,8 +32,9 @@ object ArgumentDeriver extends LazyLogging {
   }
 
   /**
-    * Extracts the extra argument representing the number of agents to retrieve from the program
-    * arguments
+    * Extracts the extra argument representing the number of agents to retrieve from the program arguments. Will throw
+    * an IllegalArgumentException stopping the program if the arguments are incorrect. Will also throw a NumberFormatException
+    * if the argument for the number of agents is not an integer.
     *
     * @param args Array of parameters, first should be resource to execute against, second should be file to write to
     *             third number of agents to extract
