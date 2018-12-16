@@ -10,8 +10,8 @@ object ArgumentDeriver extends LazyLogging {
   /**
     * Checks there are two arguments for the resource and the filename, then returns them
     *
-    * @param args the arguments to check
-    * @return a single argument taken from the list
+    * @param args The arguments to check
+    * @return A tuple of arguments from the list representing the resource path and file to write to
     */
   def deriveResourceFilenameArgument(args: Array[String]): (String, String) = {
 

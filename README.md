@@ -13,3 +13,4 @@ To think about:
 - Logging
 - Error-handling
 - Potentially docker
+- Documentation

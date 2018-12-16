@@ -15,7 +15,7 @@ class ExerciseTwoTest extends FunSuite with BeforeAndAfter {
     FileUtils.deleteQuietly(new File(testFileName))
   }
 
-  test("Given valid file, when derive schema, returns correct result") {
+  test("Given valid dataset, when count records, returns 20087") {
 
     val resourcePath = "src/main/resources/data/planning-applications-weekly-list.json"
     val expectedCount = 20087

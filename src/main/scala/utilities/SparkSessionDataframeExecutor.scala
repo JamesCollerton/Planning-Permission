@@ -15,13 +15,13 @@ object SparkSessionDataframeExecutor extends LazyLogging {
   private val spark = SparkSession.builder.appName("Spark Session").config("spark.master", "local").getOrCreate()
 
   /**
-    * Allows us to execute an arbitrary function f against a dataframe of a resource using the
+    * Allows us to execute an arbitrary function f against a DataFrame of a resource using the
     * current SparkSession
     *
-    * @param resourcePath path of the resource to execute against
-    * @param f function to execute
-    * @tparam A type parameter we expect to be returned from the function
-    * @return result from executing the function against the dataframe
+    * @param resourcePath Path of the resource to execute against
+    * @param f Function to execute
+    * @tparam A Type parameter we expect to be returned from the function
+    * @return Result from executing the function against the dataframe
     */
   def buildSessionExecuteFunction[A](resourcePath: String, f: DataFrame => A): A = {
 

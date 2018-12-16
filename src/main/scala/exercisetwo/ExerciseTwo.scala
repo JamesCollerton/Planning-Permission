@@ -1,7 +1,7 @@
 package exercisetwo
 
 import com.typesafe.scalalogging.LazyLogging
-import utilities.{ArgumentDeriver, DoubleArgumentExerciseExecutor, SolutionFileWriter, SparkSessionDataframeExecutor}
+import utilities.DoubleArgumentExerciseExecutor
 
 /**
   * What is the total number of planning application records in the dataset? Feel free to output this to a file or
@@ -10,10 +10,10 @@ import utilities.{ArgumentDeriver, DoubleArgumentExerciseExecutor, SolutionFileW
 object ExerciseTwo extends LazyLogging {
 
   /**
-    * Point of entry for the program. Expects a single parameter containing the filename to
-    * write the results to.
+    * Point of entry for the program. Expects two parameters, the first containing a
+    * resource name to execute against, the second containing a filename to write against.
     *
-    * @param args Single parameter containing the filename as a string
+    * @param args Array of parameters, first should be resource to execute against, second should be file to write to
     */
   def main(args: Array[String]): Unit= {
 
