@@ -13,10 +13,12 @@ import org.apache.spark.sql.functions._
 object ExerciseFour extends LazyLogging {
 
   /**
-    * Point of entry for the program. Expects two parameters, the first containing a
-    * resource name to execute against, the second containing a filename to write against.
+    * Point of entry for the program. Expects three parameters, the first containing a
+    * resource name to execute against, the second containing a filename to write against,
+    * the third the number of agents to query
     *
-    * @param args Array of parameters, first should be resource to execute against, second should be file to write to
+    * @param args Array of parameters, first should be resource to execute against, second should be file to write to, third
+    *             should be the number of agents to query
     */
   def main(args: Array[String]): Unit= {
 
