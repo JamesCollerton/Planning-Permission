@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "5c161d4bb712beaf989a6410",
+    "index": 0,
+    "CASEOFFICER": "banana"
+  },
+  {
+    "_id": "5c161d4be29725f3d7930c04",
+    "index": 1,
+    "CASEOFFICER": "apple"
+  },
+  {
+    "_id": "5c161d4b6726a0ae6d24b8c0",
+    "index": 2,
+    "CASEOFFICER": "strawberry"
+  }
+]
