@@ -1,7 +1,6 @@
 package exercisethree
 
 import com.typesafe.scalalogging.LazyLogging
-import exercisetwo.ExerciseTwo.logger
 import utilities.DoubleArgumentExerciseExecutor
 
 /**
@@ -17,14 +16,14 @@ object ExerciseThree extends LazyLogging {
     */
   def main(args: Array[String]): Unit= {
 
-    logger.info(s"Entered ExerciseTwo.main: $args")
+    logger.info(s"Entered ExerciseThree.main: $args")
 
     DoubleArgumentExerciseExecutor.execute(
       args,
       d => d.select("CASEOFFICER").distinct().collect().mkString(", ")
     )
 
-    logger.info(s"Exiting ExerciseTwo.main: $args")
+    logger.info(s"Exiting ExerciseThree.main: $args")
 
   }
 

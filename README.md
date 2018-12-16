@@ -14,3 +14,5 @@ To think about:
 - Error-handling
 - Potentially docker
 - Documentation
+- Code style
+- Some names are very similar, does no fuzzy matching

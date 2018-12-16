@@ -2,10 +2,7 @@ package utilities
 
 import java.io.File
 
-import exerciseone.ExerciseOne
-import exercisetwo.ExerciseTwo
 import org.apache.commons.io.FileUtils
-import org.apache.spark.sql.DataFrame
 import org.scalatest.{BeforeAndAfter, FunSuite}
 
 import scala.io.Source

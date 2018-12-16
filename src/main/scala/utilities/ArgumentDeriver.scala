@@ -30,4 +30,34 @@ object ArgumentDeriver extends LazyLogging {
 
   }
 
+  /**
+    * Extracts the extra argument representing the number of agents to retrieve from the program
+    * arguments
+    *
+    * @param args Array of parameters, first should be resource to execute against, second should be file to write to
+    *             third number of agents to extract
+    * @return A tuple of the number of agents to extract and the remaining arguments
+    */
+  def deriveResourceFilenameNArgument(args: Array[String]): (Int, Array[String]) = {
+
+    logger.info(s"Entered ArgumentDeriver.deriveResourceFilenameNArgument: $args")
+
+    if(args.length != 3) {
+      throw new IllegalArgumentException("Arguments for resource path/ file/ number of agents incorrect.")
+    }
+
+    val numberAgents = args(2).toInt
+
+    if(numberAgents < 0) {
+      throw new IllegalArgumentException("Argument for number of agents must be positive.")
+    }
+
+    val newArgs = args.take(2)
+
+    logger.info(s"Exiting ArgumentDeriver.deriveResourceFilenameNArgument: $numberAgents, $newArgs")
+
+    (numberAgents, newArgs)
+
+  }
+
 }

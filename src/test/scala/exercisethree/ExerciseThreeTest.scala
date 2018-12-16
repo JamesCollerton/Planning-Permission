@@ -2,7 +2,6 @@ package exercisethree
 
 import java.io.File
 
-import exercisetwo.ExerciseTwo
 import org.apache.commons.io.FileUtils
 import org.scalatest.{BeforeAndAfter, FunSuite}
 
@@ -10,7 +9,7 @@ import scala.io.Source
 
 class ExerciseThreeTest extends FunSuite with BeforeAndAfter {
 
-  private val testFileName = "ExerciseOneTestFile.txt"
+  private val testFileName = "ExerciseThreeTestFile.txt"
 
   after {
     FileUtils.deleteQuietly(new File(testFileName))
