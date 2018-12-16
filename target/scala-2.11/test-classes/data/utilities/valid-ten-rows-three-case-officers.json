@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "5c161d0b8553734731786190",
+    "index": 0,
+    "CASEOFFICER": "strawberry"
+  },
+  {
+    "_id": "5c161d0bf97b3ac01a43ce32",
+    "index": 1,
+    "CASEOFFICER": "banana"
+  },
+  {
+    "_id": "5c161d0b38abc5ed78a016ca",
+    "index": 2,
+    "CASEOFFICER": "strawberry"
+  },
+  {
+    "_id": "5c161d0b197de19d83c1b296",
+    "index": 3,
+    "CASEOFFICER": "apple"
+  },
+  {
+    "_id": "5c161d0b856a14e178a5a78b",
+    "index": 4,
+    "CASEOFFICER": "apple"
+  },
+  {
+    "_id": "5c161d0bccd87a8984decd24",
+    "index": 5,
+    "CASEOFFICER": "apple"
+  },
+  {
+    "_id": "5c161d0b6ffc5d9ca53fa61c",
+    "index": 6,
+    "CASEOFFICER": "banana"
+  },
+  {
+    "_id": "5c161d0be3cb724d04b8cb0d",
+    "index": 7,
+    "CASEOFFICER": "banana"
+  },
+  {
+    "_id": "5c161d0b69a3489593290dbb",
+    "index": 8,
+    "CASEOFFICER": "apple"
+  },
+  {
+    "_id": "5c161d0b693a27511b719a99",
+    "index": 9,
+    "CASEOFFICER": "apple"
+  }
+]

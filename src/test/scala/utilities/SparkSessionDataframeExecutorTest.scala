@@ -21,4 +21,12 @@ class SparkSessionDataframeExecutorTest extends FunSuite {
     assert(count == 10)
   }
 
+  test("Given valid file with ten rows and three distinct case officers, when find case officers, returns correct three") {
+    val caseOfficerList = SparkSessionDataframeExecutor.buildSessionExecuteFunction(
+      "src/test/resources/data/utilities/valid-ten-rows-three-case-officers.json",
+      d => d.select("CASEOFFICER").distinct().collect().mkString(", ")
+    )
+    assert(caseOfficerList == "[strawberry], [apple], [banana]")
+  }
+
 }
