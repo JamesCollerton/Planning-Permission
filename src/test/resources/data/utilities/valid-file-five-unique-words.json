@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "5c1644ff1be706ede9a17df0",
+    "index": 0,
+    "CASETEXT": "pineapple"
+  },
+  {
+    "_id": "5c1644ff893761b8b879d882",
+    "index": 1,
+    "CASETEXT": "apple"
+  },
+  {
+    "_id": "5c1644ff4a3ad273c9f3fe34",
+    "index": 2,
+    "CASETEXT": "strawberry"
+  },
+  {
+    "_id": "5c1644ffffbc86fdf0535dbb",
+    "index": 3,
+    "CASETEXT": "banana"
+  },
+  {
+    "_id": "5c1644ff766e4b092ccff2e1",
+    "index": 4,
+    "CASETEXT": "kiwi"
+  }
+]

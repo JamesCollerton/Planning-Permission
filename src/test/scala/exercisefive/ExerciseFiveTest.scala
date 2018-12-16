@@ -2,7 +2,6 @@ package exercisefive
 
 import java.io.File
 
-import exercisefour.ExerciseFour
 import org.apache.commons.io.FileUtils
 import org.scalatest.{BeforeAndAfter, FunSuite}
 

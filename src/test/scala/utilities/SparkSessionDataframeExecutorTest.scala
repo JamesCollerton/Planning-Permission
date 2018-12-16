@@ -1,6 +1,6 @@
 package utilities
 
-import org.apache.spark.sql.functions.desc
+import org.apache.spark.sql.functions.{col, desc, explode, split}
 import org.scalatest.FunSuite
 
 class SparkSessionDataframeExecutorTest extends FunSuite {
@@ -43,6 +43,20 @@ class SparkSessionDataframeExecutorTest extends FunSuite {
             .mkString(", ")
     )
     assert(caseOfficerList == "[pineapple], [banana]")
+  }
+
+  test("Given valid file with five unique words, when count unique words, then returns correct result") {
+
+    val caseTextCount = SparkSessionDataframeExecutor.buildSessionExecuteFunction(
+      "src/test/resources/data/utilities/valid-file-five-unique-words.json",
+      d => d.withColumn("CASETEXT", explode(split(col("CASETEXT"), " ")))
+              .groupBy("CASETEXT")
+              .count()
+              .collect()
+              .mkString(", ")
+    )
+    assert(caseTextCount == "[strawberry,1], [kiwi,1], [apple,1], [banana,1], [pineapple,1]")
+
   }
 
 }
