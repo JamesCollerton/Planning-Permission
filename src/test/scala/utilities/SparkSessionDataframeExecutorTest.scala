@@ -1,5 +1,6 @@
 package utilities
 
+import org.apache.spark.sql.functions.desc
 import org.scalatest.FunSuite
 
 class SparkSessionDataframeExecutorTest extends FunSuite {
@@ -27,6 +28,21 @@ class SparkSessionDataframeExecutorTest extends FunSuite {
       d => d.select("CASEOFFICER").distinct().collect().mkString(", ")
     )
     assert(caseOfficerList == "[strawberry], [apple], [banana]")
+  }
+
+  test("Given valid file with ten rows, when find top 2 agents, then returns top 2 agents") {
+
+    val caseOfficerList = SparkSessionDataframeExecutor.buildSessionExecuteFunction(
+      "src/test/resources/data/utilities/valid-file-five-agents.json",
+      d => d.groupBy("AGENT")
+            .count()
+            .withColumnRenamed("count", "n")
+            .orderBy(desc("n"))
+            .select("AGENT")
+            .head(2)
+            .mkString(", ")
+    )
+    assert(caseOfficerList == "[pineapple], [banana]")
   }
 
 }
