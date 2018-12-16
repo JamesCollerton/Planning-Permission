@@ -3,7 +3,7 @@
 
 # Planning Permission
 
-This is a short Scala Spark project based around planning permissions in the North East of England. It is split into six main exercises in order to explore the data available in the provided json file.
+This is a short Scala Spark project based around planning permissions in the North East of England. It is split into six main exercises in order to explore the data available in the provided `json` file.
 
 ## What is Spark?
 
@@ -23,7 +23,7 @@ Exercise four requires an additional argument which is the number of agents we w
 src/main/resources/data/planning-applications-weekly-list.json solutions/ExerciseFour.txt 10
 ```
 
-The whole project was worked on in IntelliJ, so it may be easiest to open it as an IntelliJ project and run it from there. **The solutions to each exercise can be found in the solutions folder at the base of the repository**.
+The whole project was worked on in `IntelliJ`, so it may be easiest to open it as an `IntelliJ` project and run it from there. **The solutions to each exercise can be found in the solutions folder at the base of the repository**.
 
 ## Builds
 
@@ -53,10 +53,10 @@ In all of the exercises I collect the results from a `DataFrame` into an array a
 
 For each of the following exercises the solution could be improved:
 
-- Exercise Three: Assumes the `CASEOFFICER` column exists.
-- Exercise Four: Assumes the `AGENT` column exists, does not filter for blank agents, does not do any fuzzy matching for names (e.g. removing prefixes).
-- Exercise Five: Assumes the `CASETEXT` column exists, does not remove punctuation, does not convert everything to the same case, does not remove whitespace.
-- Exercise Six: Assumes the `PUBLICCONSULTATIONENDDATE` and `PUBLICCONSULTATIONSTARTDATE` columns exist, does not check to see if they are valid date strings, does not check to see if start date is before end date.
+- **Exercise Three:** Assumes the `CASEOFFICER` column exists.
+- **Exercise Four:** Assumes the `AGENT` column exists, does not filter for blank agents, does not do any fuzzy matching for names (e.g. removing prefixes).
+- **Exercise Five:** Assumes the `CASETEXT` column exists, does not remove punctuation, does not convert everything to the same case, does not remove whitespace.
+- **Exercise Six:** Assumes the `PUBLICCONSULTATIONENDDATE` and `PUBLICCONSULTATIONSTARTDATE` columns exist, does not check to see if they are valid date strings, does not check to see if start date is before end date.
 
 ### Testing
 
@@ -72,4 +72,4 @@ Error handling has not been overly prioritised in the program, however an awaren
 
 ### Code Style
 
-Currently there are no code style guidelines implemented. However, in a production system I would have an IntelliJ `XML` file to enforce certain standards.
+Currently there are no code style guidelines implemented. However, in a production system I would have an `IntelliJ XML` file to enforce certain standards.
