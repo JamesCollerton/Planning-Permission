@@ -64,7 +64,7 @@ Although the coverage of the code is good, the testing could be a lot more thoro
 
 ### Logging
 
-Logging is minimal and was only introduced to demonstrate an ability to work with the Scala logging tools. Improvements would be to improve the use of logging and also to add a `logback` appender that would be able to write to another location in order to analyse logs centrally, for example using the `ELK` stack.
+Logging is minimal and was only introduced to demonstrate an ability to work with the Scala logging tools. Improvements would be to improve the use of logging and also to add a `logback` appender that would be able to write to another location in order to analyse logs centrally, for example using the `ELK` stack. Additionally something like AOP could be used to remove the need for all of the log calls at the entrance and exit of methods.
 
 ### Error Handling
 
