@@ -7,7 +7,9 @@ This is a short Scala Spark project based around planning permissions in the Nor
 
 ## What is Spark?
 
-As this is my first time using Spark I thought it would be good to give a quick overview of what exactly Spark was.
+As this is my first time using Spark I thought it would be good to give a quick overview of what exactly Spark is. Spark is a general-purpose distributed data processing engine that is suitable for use in a wide range of circumstances. On top of the Spark core data processing engine, there are libraries for SQL, machine learning, graph computation, and stream processing, which can be used together in an application. Application developers and data scientists incorporate Spark into their applications to rapidly query, analyze, and transform data at scale. 
+
+The goal of the Spark project was to keep the benefits of MapReduce’s scalable, distributed, fault-tolerant processing framework, while making it more efficient and easier to use. Spark works in memory, making it much faster at processing data than MapReduce and is capable of handling several petabytes of data at a time, distributed across a cluster of thousands of cooperating physical or virtual servers. The distributed, partitioned, in-memory data is referred to as a Resilient Distributed Dataset (RDD).
 
 ## Running The Exercises
 
